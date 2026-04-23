@@ -1,0 +1,6 @@
+.wrangler/
+.claude-sync-check/
+.claude-sync-export/
+TEMPLATE/
+CLAUDE.md
+main/assets/favicon.png
