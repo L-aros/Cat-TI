@@ -51,10 +51,6 @@ body {
 .page.active { display: block; }
 
 .theme-toggle {
-  position: fixed;
-  top: max(14px, env(safe-area-inset-top, 0px) + 10px);
-  right: max(calc((100vw - min(430px, 100vw)) / 2 + 16px), 16px);
-  z-index: 12;
   height: 38px;
   min-width: 66px;
   padding: 0 14px;
@@ -83,8 +79,16 @@ body {
 }
 
 .home-head {
-  padding: 18px 92px 10px 24px;
+  padding: 18px 24px 10px;
   text-align: center;
+}
+
+.home-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .home-pixel-title {
@@ -100,7 +104,7 @@ body {
   color: var(--gray-3);
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  text-align: left;
 }
 
 .home-subtitle {
@@ -426,27 +430,6 @@ body {
   text-overflow: ellipsis;
 }
 
-.result-header-btn {
-  position: relative;
-  z-index: 1;
-  margin-left: auto;
-  height: 32px;
-  min-width: 56px;
-  padding: 0 12px;
-  border-radius: 999px;
-  border: 1px solid var(--gray-2);
-  background: var(--page-shell);
-  color: var(--gray-3);
-  font-size: 12px;
-  font-weight: 600;
-  font-family: var(--font);
-  cursor: pointer;
-}
-
-.result-header-btn:active {
-  opacity: 0.75;
-}
-
 .result-hero {
   padding: 40px 28px 34px;
   display: flex;
@@ -752,7 +735,6 @@ svg { display: block; }
   .theme-toggle {
     min-width: 58px;
     padding: 0 12px;
-    right: 12px;
   }
 
   .home-pixel-title { font-size: 28px; }

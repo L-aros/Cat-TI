@@ -12,12 +12,13 @@
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换到深色模式">深色</button>
-
   <div class="page active" id="page-home">
     <div>
       <div class="home-head">
-        <div class="home-kicker">15题人格测试 · MBTI恶搞版</div>
+        <div class="home-topline">
+          <div class="home-kicker">15题人格测试 · MBTI恶搞版</div>
+          <button type="button" class="theme-toggle" aria-label="切换到深色模式">深色</button>
+        </div>
         <div class="home-pixel-title">CAT-TI</div>
         <div class="home-subtitle">测出你是哪种有点不太正常的猫<br>离谱一点，准确很多，适合直接截图发群</div>
       </div>
@@ -50,7 +51,7 @@
     <div class="quiz-header">
       <button type="button" class="btn-back" id="btn-back">←</button>
       <span class="quiz-counter" id="quiz-counter">1 / 15</span>
-      <div style="width:36px"></div>
+      <button type="button" class="theme-toggle" aria-label="切换到深色模式">深色</button>
     </div>
 
     <div class="progress-wrap">
@@ -77,7 +78,7 @@
     <div class="result-header">
       <span class="result-header-date" id="result-date"></span>
       <span class="result-header-title">VALTI结果</span>
-      <button type="button" class="result-header-btn" id="result-header-retry">再测</button>
+      <button type="button" class="theme-toggle" aria-label="切换到深色模式">深色</button>
     </div>
 
     <div class="result-hero">

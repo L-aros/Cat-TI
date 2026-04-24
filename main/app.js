@@ -13,7 +13,7 @@ let currentResultCode = null;
 let lastQuizCatKey = null;
 
 const dom = {
-  themeToggle: document.getElementById("theme-toggle"),
+  themeToggles: document.querySelectorAll(".theme-toggle"),
   startBtn: document.getElementById("btn-start"),
   noticeEntry: document.getElementById("home-notice-entry"),
   noticeReopen: document.getElementById("btn-notice-reopen"),
@@ -23,7 +23,6 @@ const dom = {
   backBtn: document.getElementById("btn-back"),
   nextBtn: document.getElementById("btn-next"),
   retryBtn: document.getElementById("btn-retry"),
-  resultHeaderRetry: document.getElementById("result-header-retry"),
   optionsWrap: document.getElementById("options-wrap"),
   quizCounter: document.getElementById("quiz-counter"),
   progressFill: document.getElementById("progress-fill"),
@@ -43,8 +42,10 @@ const dom = {
 function updateThemeToggle(theme) {
   const nextLabel = theme === "dark" ? "浅色" : "深色";
   const ariaLabel = theme === "dark" ? "切换到浅色模式" : "切换到深色模式";
-  dom.themeToggle.textContent = nextLabel;
-  dom.themeToggle.setAttribute("aria-label", ariaLabel);
+  dom.themeToggles.forEach(toggle => {
+    toggle.textContent = nextLabel;
+    toggle.setAttribute("aria-label", ariaLabel);
+  });
 }
 
 function setTheme(theme, persist = true) {
@@ -489,7 +490,7 @@ function retryQuiz() {
 }
 
 function bindEvents() {
-  dom.themeToggle.addEventListener("click", toggleTheme);
+  dom.themeToggles.forEach(toggle => toggle.addEventListener("click", toggleTheme));
   dom.startBtn.addEventListener("click", startQuiz);
   dom.noticeReopen.addEventListener("click", openNoticeDialog);
   dom.noticeAgree.addEventListener("click", agreeNotice);
@@ -497,7 +498,6 @@ function bindEvents() {
   dom.backBtn.addEventListener("click", goBack);
   dom.nextBtn.addEventListener("click", nextQuestion);
   dom.retryBtn.addEventListener("click", retryQuiz);
-  dom.resultHeaderRetry.addEventListener("click", retryQuiz);
   dom.optionsWrap.addEventListener("click", handleOptionClick);
 }
 
